@@ -3,13 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>Kaapsehoop Escarpment Pacer (Mobile Edition)</title>
+  <title>Kaapsehoop 4 in 1 Marathon · Pacer</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    /* Runners Playground colours: remap the dark slate + amber theme to navy + yellow/turquoise/pink */
+    tailwind.config = { theme: { extend: {
+      fontFamily: { sans: ['Nunito', 'sans-serif'], display: ['Fredoka', 'sans-serif'] },
+      colors: { slate: {50: '#F3F7FB', 100: '#E4EEF6', 200: '#CFE3F2', 300: '#A9C3D9', 400: '#7F9AB5', 500: '#6A86A2', 600: '#3D5670', 700: '#2B4560', 800: '#1B3049', 900: '#12243A', 950: '#0A1828'}, amber: {50: '#FFFBEA', 100: '#FFF6D1', 200: '#FFEC9E', 300: '#FFE372', 400: '#FFD23F', 500: '#FFD23F', 600: '#E6B800', 700: '#8A6A00', 800: '#6B5200', 900: '#4D3D00', 950: '#2E2400'}, emerald: {50: '#E6FAF8', 100: '#C4F3EE', 200: '#93E8DF', 300: '#5FDBCF', 400: '#2EC4B6', 500: '#22B0A3', 600: '#0B9488', 700: '#0B7A70', 800: '#0A5F58', 900: '#084A44', 950: '#052E2A'}, rose: {50: '#FFF0F4', 100: '#FFE3EC', 200: '#FFC2D4', 300: '#FF94B2', 400: '#FF5C8A', 500: '#F0406F', 600: '#D12A5C', 700: '#B0204F', 800: '#8E1A40', 900: '#6E1432', 950: '#4A0C21'} }
+    } } };
+  </script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: #090d16;
+      font-family: 'Nunito', sans-serif;
+      background-color: #0A1828;
       color: #f1f5f9;
       -webkit-tap-highlight-color: transparent;
       /* Extra bottom clearance so Samsung / Android navigation bars never cover content */
@@ -33,8 +40,36 @@
       padding-bottom: calc(2.5rem + env(safe-area-inset-bottom, 28px));
     }
   </style>
+
+<style id="trp-shared">
+  /* Runners Playground shared top menu */
+  .trp-nav{background:#fff;border-bottom:3px solid #0F2236;font-family:'Nunito',sans-serif;color:#0F2236;position:relative;z-index:45}
+  .trp-nav .in{max-width:1240px;margin:0 auto;padding:8px 14px;display:flex;align-items:center;gap:12px;justify-content:space-between}
+  .trp-logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:#0F2236;font:700 17px/1 'Fredoka',sans-serif;white-space:nowrap}
+  .trp-logo b{color:#D12A5C;font-weight:700}
+  .trp-links{display:flex;gap:4px;overflow-x:auto;white-space:nowrap;scrollbar-width:none;font-weight:800;font-size:14px}
+  .trp-links::-webkit-scrollbar{display:none}
+  .trp-links a{color:#0F2236;text-decoration:none;padding:9px 12px;border-radius:999px;min-height:40px;display:inline-flex;align-items:center}
+  .trp-links a:hover{background:#E6FAF8}
+  .trp-links a[aria-current=page]{background:#FFD23F;border:2px solid #0F2236;padding:7px 10px}
+  .trp-nav a:focus-visible{outline:3px solid #FF5C8A;outline-offset:2px}
+  @media(max-width:560px){.trp-logo span{display:none}.trp-nav .in{gap:8px}}
+  h1,h2,h3,.font-display{font-family:'Fredoka','Nunito',sans-serif !important;letter-spacing:0 !important}
+</style>
+  <style id="trp-kaap">
+    /* Playground look on the dark pacer */
+    main .rounded-2xl.border{border-width:2px !important;border-color:#2B4560 !important}
+    .bg-amber-500{color:#0F2236}
+    .mobile-tab-btn{min-height:40px}
+  </style>
 </head>
 <body class="min-h-screen flex flex-col selection:bg-amber-500 selection:text-slate-950">
+  <!-- Runners Playground shared menu: change HOME in this link list if your main site moves -->
+  <nav class="trp-nav" aria-label="Runners Playground"><div class="in">
+    <a class="trp-logo" href="https://yollieblom.github.io/runners-playground/" aria-label="The Runners Playground home"><svg width="34" height="34" viewBox="0 0 44 44" aria-hidden="true"><rect x="3" y="9" width="38" height="26" rx="13" fill="none" stroke="#2EC4B6" stroke-width="5"/><rect x="11" y="16" width="22" height="12" rx="6" fill="#FFD23F" stroke="#0F2236" stroke-width="2.5"/><circle cx="34" cy="10" r="5" fill="#FF5C8A" stroke="#0F2236" stroke-width="2.5"/></svg><span>The Runners <b>Playground</b></span></a>
+    <div class="trp-links"><a href="https://yollieblom.github.io/runners-playground/">Home</a><a href="https://yollieblom.github.io/runners-playground/#calculators">Calculators</a><a href="https://yollieblom.github.io/runners-playground/#diary">Run Diary</a><a href="https://yollieblom.github.io/race-pacer/">Race Pacers</a><a href="https://yollieblom.github.io/Mataffin-pace/">Mataffin</a><a href="https://yollieblom.github.io/kaapsehoop-4-in-1-marathon/" aria-current="page">Kaapsehoop</a><a href="https://yollieblom.github.io/runners-playground/#challenges">Challenges</a></div>
+  </div></nav>
+
 
   <!-- STICKY TOP HEADER + SAMSUNG-SAFE TOP NAVIGATION BAR -->
   <header class="sticky top-0 z-40 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 shadow-lg">
@@ -48,7 +83,7 @@
           </div>
           <div>
             <div class="flex items-center gap-1.5">
-              <h1 class="font-bold text-sm sm:text-base tracking-tight text-white">Kaapsehoop Pacer</h1>
+              <h1 class="font-bold text-sm sm:text-base tracking-tight text-white">Kaapsehoop 4 in 1 Marathon</h1>
               <span id="headerRaceBadge" class="text-[10px] font-bold uppercase px-1.5 py-0.5 rounded bg-amber-500/15 text-amber-400 border border-amber-500/30">21.1 km</span>
             </div>
             <p class="text-[11px] text-slate-400 mono" id="headerSubStats">Target 1:44:59 • 4:58/km</p>
@@ -791,10 +826,10 @@
       const xForIdx = (i) => pad.left + (i / (NUM_NODES - 1)) * plotW;
       const yForElev = (e) => pad.top + plotH - ((e - minElev) / (maxElev - minElev)) * plotH;
 
-      ctx.strokeStyle = "#1e293b";
+      ctx.strokeStyle = "#1B3049";
       ctx.lineWidth = 1;
       ctx.font = "10px 'JetBrains Mono', monospace";
-      ctx.fillStyle = "#64748b";
+      ctx.fillStyle = "#6A86A2";
       const elevStep = maxElev - minElev > 650 ? 200 : 100;
       for (let e = Math.ceil(minElev / elevStep) * elevStep; e < maxElev; e += elevStep) {
         const y = yForElev(e);
@@ -806,8 +841,8 @@
       }
 
       const areaGrad = ctx.createLinearGradient(0, pad.top, 0, pad.top + plotH);
-      areaGrad.addColorStop(0, "rgba(16, 185, 129, 0.30)");
-      areaGrad.addColorStop(1, "rgba(15, 23, 42, 0.04)");
+      areaGrad.addColorStop(0, "rgba(46, 196, 182, 0.30)");
+      areaGrad.addColorStop(1, "rgba(10, 24, 40, 0.04)");
 
       ctx.beginPath();
       ctx.moveTo(xForIdx(0), pad.top + plotH);
@@ -824,7 +859,7 @@
         ctx.moveTo(xForIdx(i), yForElev(elevationNodes[i]));
         ctx.lineTo(xForIdx(i + 1), yForElev(elevationNodes[i + 1]));
         ctx.lineWidth = 2.5;
-        ctx.strokeStyle = gradePct < -3.5 ? "#10b981" : gradePct > 1.5 ? "#f43f5e" : "#f59e0b";
+        ctx.strokeStyle = gradePct < -3.5 ? "#2EC4B6" : gradePct > 1.5 ? "#FF5C8A" : "#FFD23F";
         ctx.stroke();
       }
 
@@ -841,7 +876,7 @@
 
         ctx.beginPath();
         ctx.arc(hx, hy, 5.5, 0, Math.PI * 2);
-        ctx.fillStyle = "#f59e0b";
+        ctx.fillStyle = "#FFD23F";
         ctx.fill();
       }
     }
@@ -1094,5 +1129,6 @@
     resizeCanvas();
     recalculateSimulation();
   </script>
+<footer style="max-width:1240px;margin:0 auto;padding:16px 14px 28px;font:14px/1.5 Nunito,sans-serif;color:#6A86A2;text-align:center">© 2026 The Runners Playground. All rights reserved.</footer>
 </body>
 </html>
